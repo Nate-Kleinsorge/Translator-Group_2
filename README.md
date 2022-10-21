@@ -7,7 +7,7 @@ I want to translate words to another language.
 So I can better communicate.
 
 Sketch:
-![Screenshot](./images/framework.png)
+![Screenshot](./assets/images/framework.png)
 
 
 APIs:
