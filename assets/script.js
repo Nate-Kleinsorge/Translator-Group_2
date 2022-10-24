@@ -12,10 +12,3 @@ const options = {
 	}
 };
 
-fetch('https://wordsapiv1.p.rapidapi.com/words/beautiful/definition', options)
-	.then(function(response) {
-        return response.json();
-    }).then(function(data) {
-        console.log(data);
-    });
-
