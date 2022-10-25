@@ -1,13 +1,16 @@
-/* main {
-    max-width: 1440px;
-    margin: 0 auto;
+.logo-icon {
+    background-image: linear-gradient(to right, rgb(151, 216, 114) , rgb(17, 128, 255));
+    position: relative;
+    top: 0.4rem;
 }
 
-.hdr {
-    max-width: 1440px;
-} */
-
-.favs-menu {
-    width: 18px;
-    height: 18px;
+.love-icon {
+    position: relative;
+    top: 0.5rem;
+    
 }
+
+footer:hover .love-icon {
+    color: rgb(206, 3, 3);
+}
+
