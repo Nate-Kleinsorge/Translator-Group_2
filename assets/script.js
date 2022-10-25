@@ -1,8 +1,11 @@
+const lastFive = [];
 var key = {'X-RapidAPI-Key': '287257e633mshd41c1d94590619dp1e2d05jsnd9dc792f435b'};
 document.getElementById("translateBtn").addEventListener("click", function() {
     var word = document.getElementById("wordSearch").value;
+    lastFive.push(JSON.stringify(word));
     url = "https://wordsapiv1.p.rapidapi.com/words/" + word + "/definition";
     fetchUrl(url);
+    localStorage.setItem("lastFive", lastFive);
     return word;
 })
 
@@ -30,3 +33,8 @@ function fetchUrl(url) {
         });
 };
 
+// for (let i = 0; i < array.length; i++) {
+//     const lastFive = [];
+//     lastFive.push(word);
+//     localStorage.setItem("lastFive", lastFive);
+// }
