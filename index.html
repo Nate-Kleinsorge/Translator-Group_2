@@ -10,45 +10,60 @@
 <body>
   <header class="p-4 mb-5 border-bottom shadow-sm">
     <div class="container">
-      <div class="col-auto d-flex flex-wrap justify-content-between">
-        <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
-          Translator++
-        </a>
+      <div class="d-flex flex-wrap justify-content-between">
+        <div>
+          <a href="/" class="d-flex align-items-center text-dark  text-decoration-none">
+            Translator++
+          </a>
+        </div>
+        <div class="col-12 col-lg-7 ">
+          <form  role="search">
+            <input type="text" class="form-control" placeholder="Search for a word or phrase ..." aria-label="Search for a word or phrase ...">
+          </form>
+        </div>
 
-        <form class="col-12 col-lg-7" role="search">
-          <input type="text" class="form-control" placeholder="Search for a word or phrase ..." aria-label="Search for a word or phrase ...">
-        </form>
+        <div class="col-12 col-lg-3 col-md-3" role="search">
+          <form>
+            <select class="form-select" id="autoSizingSelect">
+              <option selected>Translate To...</option>
+              <option value="1">Spanish</option>
+              <option value="2">German</option>
+              <option value="3">Russian</option>
+              <option value="3">Italian</option>
+            </select>
+          </form>
+        </div>
 
-        <form class="col-12 col-lg-3 col-md-8" role="search">
-          <select class="form-select" id="autoSizingSelect">
-            <option selected>Translate To...</option>
-            <option value="1">Spanish</option>
-            <option value="2">German</option>
-            <option value="3">Russian</option>
-            <option value="3">Italian</option>
-          </select>
-        </form>
-
-        <div class="col-lg-2 col-md-4">
-          <button class="btn btn-primary w-100">Translate</button>
+        <div class="mx-1">
+          <button class="btn btn-primary">Translate</button>
         </div> 
+        <!-- <div class="col-1">
+          <img src="./assets/images/favorite-icon.svg" width="58px" height="58px" class="favs-menu" alt="Saved Words">
+        </div> -->
       </div>
     </div>
   </header>
 
   <main>
     <div class="container">
-      <div class="d-grid gap-3" style="grid-template-columns: 2fr 1fr;">
-        <div class="bg-light border rounded-2 p-3">
-          <h4>Floccinaucinihilipilification</h4>
-          <br><br><br><br><br><br><br><br><br><br>
+      <div class="row">
+          <div class="col-lg-7 bg-light border rounded-1 p-3 mb-3">
+            <div class="d-flex justify-items-start align-items-center flex-wrap">
+              <h4 id="word">Floccinaucinihilipilification</h4> &nbsp;&nbsp;&nbsp;&nbsp;
+              <img src="./assets/images/fav-icon.png" id="addFav" width="18px" alt="Add to Favotires">&nbsp; Save
+            </div>
+            <br>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae repellat, voluptates odit commodi maxime sint ducimus illum veritatis quia voluptatem quas accusamus vero dolorem. Quibusdam ullam nihil dolore ipsum perspiciatis nemo assumenda fugit molestias libero.  </p> 
+          </div>
+        <div>
+        <div class="col-lg-5 bg-light border rounded-1 p-3">.col-6 .col-md-4</div>
         </div>
-        <div class="bg-light border rounded-2 p-3">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae repellat, voluptates odit commodi maxime sint ducimus illum veritatis quia voluptatem quas accusamus vero dolorem. Quibusdam ullam nihil dolore ipsum perspiciatis nemo assumenda fugit molestias libero.  </p> 
-          <br><br><br><br><br><br><br><br><br><br>
         </div>
-      </div>
     </div>
+
+    
+
+
   </main>
 
   <footer class="py-3 my-5">
