@@ -11,7 +11,7 @@ Sketch:
 
 
 APIs:
-https://libretranslate.com/
+https://www.deepl.com/
 https://www.wordsapi.com/
 
 
