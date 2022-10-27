@@ -22,10 +22,10 @@
         </div>
         
         <div class="col-lg-5 col-md-9 col-sm-8 ps-0">
-          <form  role="search">
+          <form id="searchForm">
             <!-- <input> used for typing searched word -->
-            <input type="text" class="form-control" id="wordSearch" placeholder="Search for a word or phrase ..." aria-label="Input a word or phrase" 
-            pattern="[a-z]{4,8}" />
+
+            <input type="text" class="form-control" id="wordSearch" required="required" pattern="[a-zA-Z]+" title="Please use letters only" placeholder="Search for a word or phrase ..." aria-label="Input a word or phrase">
           </form>
         </div>
 
@@ -33,7 +33,7 @@
           <!-- <select> used for language selection for the translations -->
           <form>
             <select class="form-select animation slideDownIn" id="langSelector">
-              <option selected>Translate To...</option>
+              <option selected>Translate to...</option>
               <option value="1">Spanish</option>
               <option value="2">German</option>
               <option value="3">Russian</option>
@@ -43,7 +43,7 @@
         </div>
 
         <div class="col-lg-2 col-sm-5 col-5">
-          <button class="btn btn-primary w-100" id="translateBtn">Translate</button>
+          <button class="btn btn-primary w-100" id="translateBtn" form="searchForm">Translate</button>
         </div>
 
       </div>
@@ -58,7 +58,7 @@
           <div class="bg-light border rounded-1 pt-3 px-3 mb-3 h-100">
             
             <!-- <h4> used to insert searched word -->
-            <h4 id="word"></h4>
+            <h4 id="word">About</h4>
             
             <!-- <p> used to insert word definition -->
             <p class="mb-5" id="wordDef">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi sint, voluptatem, dolorem in iste minus expedita perspiciatis exercitationem cumque, nisi eius accusamus nobis facilis eligendi!</p>
@@ -106,7 +106,11 @@
         <div class="col-md-5">
           <!-- <div> used to insert translation -->
           <div class="bg-light border rounded-1 p-3 h-100">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione est repellat quas eligendi. Provident, nihil?
+
+            <h5 id="selectedLang">Spanish:</h5>
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione est repellat quas eligendi. Provident, nihil?</p>
+            
           </div>
         </div>
 
@@ -119,7 +123,7 @@
       <div class="row justify-content-center align-items-end">
         
         <div class="col-auto text-muted mb-2">
-          Made with <span class="love-icon material-symbols-outlined">favorite</span> by Second-is-the-best.
+          Made with <span class="love-icon material-symbols-outlined">favorite</span> by SITB Group.
         </div>
 
         <div class="col-auto mb-2">
