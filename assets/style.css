@@ -18,15 +18,3 @@ body {
 footer:hover .love-icon {
     color: rgb(206, 3, 3);
 }
-
-
-.material-symbols-outlined {
-    position: relative;
-    top: 0.4rem;
-}
-
-#dropdownMenuButton2 {
-    background-color: #fff;
-    border: none;
-    width: 10px;
-}
