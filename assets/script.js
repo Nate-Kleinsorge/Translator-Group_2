@@ -38,8 +38,27 @@ function fetchUrl(url) {
         });
 };
 
-// for (let i = 0; i < array.length; i++) {
-//     const lastFive = [];
-//     lastFive.push(word);
-//     localStorage.setItem("lastFive", lastFive);
-// }
+//fetch translation and print
+const options = {
+	method: 'POST',
+	headers: {
+		'content-type': 'application/json',
+		'X-RapidAPI-Key': "287257e633mshd41c1d94590619dp1e2d05jsnd9dc792f435b",
+		'X-RapidAPI-Host': 'microsoft-translator-text.p.rapidapi.com'
+	},
+	body: '[{"Text":"How are you? I am fine. What did you do today?"}]'
+};
+
+var options2 = document.getElementsByClassName("option_01");
+
+for (var i = 0; i < options2.length; i++) {
+    console.log(options2[i])
+};
+
+fetch('https://microsoft-translator-text.p.rapidapi.com/BreakSentence?api-version=3.0&to=', options)
+	.then(function (response) {
+        return response.json();
+    }).then(function (data) {
+        console.log(data);
+    });
+        
