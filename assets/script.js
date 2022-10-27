@@ -1,5 +1,6 @@
 const lastFive = [];
-document.getElementById("translateBtn").addEventListener("click", function() {
+document.getElementByI
+("translateBtn").addEventListener("click", function() {
     var word = document.getElementById("wordSearch").value;
     lastFive.push(JSON.stringify(word));
     word = word.trim();

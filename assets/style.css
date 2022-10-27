@@ -24,3 +24,9 @@ footer:hover .love-icon {
     position: relative;
     top: 0.4rem;
 }
+
+#dropdownMenuButton2 {
+    background-color: #fff;
+    border: none;
+    width: 10px;
+}
