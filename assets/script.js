@@ -1,12 +1,28 @@
 const lastFive = [localStorage.getItem("lastFive")];
 document.getElementById("translateBtn").addEventListener("click", function() {
+    const language = document.getElementById("langSelector").value;
     var word = document.getElementById("wordSearch").value;
     url = "https://wordsapiv1.p.rapidapi.com/words/" + word + "/definition";
     fetchUrl(url);
-    
+    translate(word, language);
     word = word.trim();
     return word;
 });
+
+//get the laguage that the user wants to translate to
+// document.getElementById("translateBtn").addEventListener("click", function() {
+//     var options2 = document.getElementsByClassName("option_01");
+//     var languageSelect = document.getElementById("langselector");
+    
+//     for (var i = 0; i < options2.length; i++) {
+//         if (options2[i].value == languageSelect.value) {
+            
+//         };
+// };
+// });
+
+
+
 document.getElementById("searchForm").addEventListener("submit",function(event){
     var word = document.getElementById("wordSearch").value;
     event.preventDefault()
@@ -29,7 +45,7 @@ function fetchUrl(url) {
         }
     };
     
-    fetch(url, options)
+    fetch (url, options)
         .then(function(response) {
             return response.json();
         }).then(function(data) {
@@ -39,26 +55,23 @@ function fetchUrl(url) {
 };
 
 //fetch translation and print
-const options = {
-	method: 'POST',
-	headers: {
-		'content-type': 'application/json',
-		'X-RapidAPI-Key': "287257e633mshd41c1d94590619dp1e2d05jsnd9dc792f435b",
-		'X-RapidAPI-Host': 'microsoft-translator-text.p.rapidapi.com'
-	},
-	body: '[{"Text":"How are you? I am fine. What did you do today?"}]'
+function translate(input, language) {
+    const options = {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json',
+            'X-RapidAPI-Key': "287257e633mshd41c1d94590619dp1e2d05jsnd9dc792f435b",
+            'X-RapidAPI-Host': 'microsoft-translator-text.p.rapidapi.com'
+        },
+        body: `[{"Text":"${input}"}]`
+    };
+    
+    fetch (`https://microsoft-translator-text.p.rapidapi.com/translate?to=${language}&api-version=3.0&profanityAction=NoAction&textType=plain`, options)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function(data) {
+            console.log(data);
+        });
 };
 
-var options2 = document.getElementsByClassName("option_01");
-
-for (var i = 0; i < options2.length; i++) {
-    console.log(options2[i])
-};
-
-fetch('https://microsoft-translator-text.p.rapidapi.com/BreakSentence?api-version=3.0&to=', options)
-	.then(function (response) {
-        return response.json();
-    }).then(function (data) {
-        console.log(data);
-    });
-        
