@@ -62,11 +62,11 @@ fetch('https://microsoft-translator-text.p.rapidapi.com/BreakSentence?api-versio
         console.log(data);
     });
         
-    var input = document.getElementById("searchForm");
+var input = document.getElementById("searchForm");
 
-    input.addEventListener("keypress", function(event) {
-      if (event.key === "Enter") {
-        event.preventDefault();
-        document.getElementById("translateBtn").click();
+input.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+     event.preventDefault();
+    document.getElementById("translateBtn").click();
       }
     });
