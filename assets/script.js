@@ -1,19 +1,21 @@
-const lastFive = localStorage.getItem("lastFive");
-const lastFive2 = lastFive;
-const lastFiveArray = lastFive2.split(",");
-
-// for Loop to print recent words pulled from local storage
-lastFiveArray.forEach(word => {
-    //Removes "" from words pull from LS
-    word = word.replaceAll('"', '');
-    let recentList = document.getElementById("recentList");
-    let listItem = document.createElement("li");
-    listItem.textContent = word;
-    recentList.appendChild(listItem);
-})
-
+const lastFive = JSON.parse(localStorage.getItem("hello")) || [];
+const lastFiveArray = lastFive;
 var translationDis = document.getElementById("translation");
 var selectedLangDis = document.getElementById("selectedLang");
+let recentList = document.getElementById("recentList");
+
+function renderLastFive (searches) {
+    // Removes values from recentlist and repopulating it with LS values
+    recentList.innerHTML = "";
+    // for Loop to print recent words pulled from local storage
+    searches.forEach(word => {
+        //Removes "" from words pull from LS
+        word = word.replaceAll('"', '');
+        let listItem = document.createElement("li");
+        listItem.textContent = word;
+        recentList.appendChild(listItem);
+    })  
+}
 
 document.getElementById("translateBtn").addEventListener("click", function() {
     const language = document.getElementById("langSelector").value;
@@ -29,10 +31,12 @@ document.getElementById("translateBtn").addEventListener("click", function() {
 document.getElementById("searchForm").addEventListener("submit",function(event){
     var word = document.getElementById("wordSearch").value;
     event.preventDefault()
-    lastFive.unshift(JSON.stringify(word));
-    localStorage.setItem("lastFive", lastFive);
-    console.log("Submit")   
+    lastFive.unshift(word);
+    // lastFive = lastFive.splice(0,5);
+    localStorage.setItem("hello", JSON.stringify(lastFive));
+    renderLastFive(lastFive);
 })
+
 var wordDis = document.getElementById("word");
 var wordDef = document.getElementById("wordDef");
 var url = "https://wordsapiv1.p.rapidapi.com/words/" + word + "/definition";
@@ -88,3 +92,5 @@ function setLanguageTag(language) {
         selectedLangDis.textContent = "Italian:";
     };
 };
+
+renderLastFive(lastFive);
