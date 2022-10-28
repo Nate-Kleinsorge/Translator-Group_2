@@ -1,26 +1,16 @@
 const lastFive = [localStorage.getItem("lastFive")];
+var translationDis = document.getElementById("translation");
+var selectedLangDis = document.getElementById("selectedLang");
 document.getElementById("translateBtn").addEventListener("click", function() {
     const language = document.getElementById("langSelector").value;
     var word = document.getElementById("wordSearch").value;
     url = "https://wordsapiv1.p.rapidapi.com/words/" + word + "/definition";
     fetchUrl(url);
+    setLanguageTag(language);
     translate(word, language);
     word = word.trim();
     return word;
 });
-
-//get the laguage that the user wants to translate to
-// document.getElementById("translateBtn").addEventListener("click", function() {
-//     var options2 = document.getElementsByClassName("option_01");
-//     var languageSelect = document.getElementById("langselector");
-    
-//     for (var i = 0; i < options2.length; i++) {
-//         if (options2[i].value == languageSelect.value) {
-            
-//         };
-// };
-// });
-
 
 
 document.getElementById("searchForm").addEventListener("submit",function(event){
@@ -71,7 +61,18 @@ function translate(input, language) {
             return response.json();
         })
         .then(function(data) {
-            console.log(data);
+            translationDis.textContent = data[0].translations[0].text;
         });
 };
 
+function setLanguageTag(language) {
+    if (language == "es") {
+        selectedLangDis.textContent = "Spanish:";
+    } else if (language == "de") {
+        selectedLangDis.textContent = "German:";
+    } else if (language == "ru") {
+        selectedLangDis.textContent = "Russian:";
+    } else if (language == "it") {
+        selectedLangDis.textContent = "Italian:";
+    };
+};
