@@ -1,6 +1,20 @@
-const lastFive = [localStorage.getItem("lastFive")];
+const lastFive = localStorage.getItem("lastFive");
+const lastFive2 = lastFive;
+const lastFiveArray = lastFive2.split(",");
+
+// for Loop to print recent words pulled from local storage
+lastFiveArray.forEach(word => {
+    //Removes "" from words pull from LS
+    word = word.replaceAll('"', '');
+    let recentList = document.getElementById("recentList");
+    let listItem = document.createElement("li");
+    listItem.textContent = word;
+    recentList.appendChild(listItem);
+})
+
 var translationDis = document.getElementById("translation");
 var selectedLangDis = document.getElementById("selectedLang");
+
 document.getElementById("translateBtn").addEventListener("click", function() {
     const language = document.getElementById("langSelector").value;
     var word = document.getElementById("wordSearch").value;
@@ -12,20 +26,18 @@ document.getElementById("translateBtn").addEventListener("click", function() {
     return word;
 });
 
-
 document.getElementById("searchForm").addEventListener("submit",function(event){
     var word = document.getElementById("wordSearch").value;
     event.preventDefault()
     lastFive.unshift(JSON.stringify(word));
     localStorage.setItem("lastFive", lastFive);
-console.log("Submit")   
+    console.log("Submit")   
 })
 var wordDis = document.getElementById("word");
 var wordDef = document.getElementById("wordDef");
 var url = "https://wordsapiv1.p.rapidapi.com/words/" + word + "/definition";
 
 //fetch definitions
-
 function fetchUrl(url) {
     const options = {
         method: 'GET',
