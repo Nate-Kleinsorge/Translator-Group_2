@@ -1,7 +1,5 @@
 body {
     min-width: 300px;
-    background-image: url('./images/background.png');
-    background-size: 1000px 1000px;
 }
 
 .logo-icon {
@@ -31,9 +29,4 @@ footer:hover .love-icon {
     background-color: #fff;
     border: none;
     width: 10px;
-}
-
-.definition-box, .translation-box {
-    background: linear-gradient(to bottom, white, rgb(222, 219, 219));
-    box-shadow: 0 1rem 1rem rgba(0,0,0,.175)!important;
 }
