@@ -76,6 +76,15 @@ function translate(input, language) {
             translationDis.textContent = data[0].translations[0].text;
         });
 };
+        
+var input = document.getElementById("searchForm");
+
+input.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+     event.preventDefault();
+    document.getElementById("translateBtn").click();
+      }
+    });
 
 function setLanguageTag(language) {
     if (language == "es") {
@@ -88,3 +97,4 @@ function setLanguageTag(language) {
         selectedLangDis.textContent = "Italian:";
     };
 };
+
