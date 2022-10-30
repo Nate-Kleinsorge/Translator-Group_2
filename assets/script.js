@@ -93,4 +93,15 @@ function setLanguageTag(language) {
     };
 };
 
-renderLastFive(lastFive);
+// This was in my original code, but it seems to be working fine without it... saving the code... just in case. 
+// This is to click enter in search bar and activate the search
+// renderLastFive(lastFive);
+
+// var input = document.getElementById("searchForm");
+
+// input.addEventListener("keypress", function(event) {
+//     if (event.key === "Enter") {
+//      event.preventDefault();
+//     document.getElementById("translateBtn").click();
+//       }
+//     });
