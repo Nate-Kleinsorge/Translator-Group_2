@@ -12,7 +12,7 @@ Sketch:
 
 APIs:
 https://www.deepl.com/
-https://www.wordsapi.com/
+https://microsoft-translator-text.p.rapidapi.com
 
 
 Tasks:

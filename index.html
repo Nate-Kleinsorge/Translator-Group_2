@@ -9,10 +9,10 @@
     <title>Translator app for world travelers</title>
 </head>
 <body>
-  <header class="pt-4 px-2 pb-3 mb-5 border-bottom shadow-sm">
+  <header class="pt-4 px-2 pb-3 mb-5 border-bottom shadow-sm bg-white">
     <div class="container">
       <div class="row justify-content-start gx-3 gy-2 pt-2">
-        <div class="col-lg-2 col-md-4 col-sm-5 mb-2">
+        <div class="col-lg-3 col-md-4 col-sm-5 mb-2">
           <a href="/" class="text-dark text-decoration-none">
             <span class="logo-icon material-symbols-outlined me-1">public</span>
             Translator++
@@ -23,11 +23,13 @@
               </span>
             </button>
             <ul class="dropdown-menu dropdown-menu-dark" id="recentList" aria-labelledby="dropdownMenuButton2"></ul>
+            <!-- do we need to include list items here with a href? -->
         </div>
-        <div class="col-lg-5 col-md-8 col-sm-7 ps-0">
+
+        <div class="col-lg-4 col-md-8 col-sm-7 ps-0">
           <form id="searchForm">
             <!-- <input> used for typing searched word -->
-            <input type="text" class="form-control" id="wordSearch" required="required" pattern="[a-zA-Z]+" title="Please use letters only" placeholder="Search for a word or phrase ..." aria-label="Input a word or phrase">
+            <input type="text" class="form-control" id="wordSearch" required="required" pattern="[a-zA-Z]+" title="Please use letters only" placeholder="Search for a word ..." aria-label="Input a word or phrase">
           </form>
         </div>
         <div class="col-lg-3 col-sm-7 col-7 ps-0" role="select">
@@ -52,24 +54,27 @@
     <div class="container">
       <div class="row gx-2 gy-2">
         <div class="col-md-7 ">
-          <div class="bg-light border rounded-1 pt-3 px-3 mb-3 h-100">
+          <div class="translation-box border rounded-1 pt-3 px-3 mb-3 h-100 shadow-lg">
             <!-- <h4> used to insert searched word -->
-            <h4 id="word">About</h4>
+            <h4 id="word"></h4>
             <!-- <p> used to insert word definition -->
-            <p class="mb-5" id="wordDef">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi sint, voluptatem, dolorem in iste minus expedita perspiciatis exercitationem cumque, nisi eius accusamus nobis facilis eligendi!</p>
-            <div class="border-top mb-2"></div>
+            <p class="mb-5" id="wordDef">Enter a word into search bar, select a language, click Translate, and the definition will be desplayed here in English and...</p>
           </div>
         </div>
         <div class="col-md-5">
           <!-- <div> used to insert translation -->
-          <div class="bg-light border rounded-1 p-3 h-100">
+
+          <div class="translation-box border rounded-1 p-3 h-100 shadow-lg">
+
             <h5 id="selectedLang"></h5>
-            <p id="translation"></p>
-          </div>
+
+            <p id="translation">... the word will be displayed here in your selected language. Happy travels!!!</p>
+          </div>  
         </div>
       </div>
     </div>
   </main>
+
   <footer class="py-3 my-5">
     <div class="container">
       <div class="row justify-content-center align-items-end">
