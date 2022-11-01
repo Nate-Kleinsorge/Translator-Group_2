@@ -1,7 +1,7 @@
 body {
     min-width: 300px;
-    background-image: url('./images/background.png');
-    background-size: 1000px 1000px;
+    background-image: url('./images/top-view-tourist-items-arrangement.jpg');
+    background-size: cover;
 }
 
 .logo-icon {
