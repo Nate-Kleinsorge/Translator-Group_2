@@ -1,6 +1,6 @@
 body {
     min-width: 300px;
-    background-image: url('./images/top-view-tourist-items-arrangement.jpg');
+    background: url('./images/top-view-tourist-items-arrangement.jpg') no-repeat center center fixed;
     background-size: cover;
 }
 
